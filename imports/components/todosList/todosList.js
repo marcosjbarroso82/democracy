@@ -14,6 +14,19 @@ class TodosListCtrl {
       }
     })
   }
+
+  addTask(newTask) {
+    // Insert a task into the collection
+    console.log("about to insert");
+    //debugger;
+    Tasks.insert({
+      text: newTask,
+      createdAt: new Date
+    });
+ 
+    // Clear form
+    this.newTask = '';
+  }
 }
  
 export default angular.module('todosList', [
